@@ -1,0 +1,33 @@
+#nav-logo {
+    width: 80px; 
+    height: 30px;
+}
+
+#nav-user {
+    width: 40px;
+    height: 35px; 
+}
+
+table{ width:100%; border-top : 3px solid #111; padding:20px}
+.even{ font-size:15px; vertical-align:top; border-bottom:1px solid #DDD; }
+.more{width:10%; border-bottom:1px solid #DDD;}
+td{padding:10px}
+
+.pagination {
+  display: inline-block;
+  padding:20px;
+}
+
+.pagination a {
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+  border-radius:5px
+}
+
+.pagination a.active {
+  background-color: #33C1B3;
+  color: white;
+  border-radius:5px
+}

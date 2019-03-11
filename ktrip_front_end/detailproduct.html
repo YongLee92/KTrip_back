@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport"
+  content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="">
+<title>KTrip: 나만을 위한 여행 가이드</title>
+
+<!-- jQuery and moment.js and rome.js-->
+<script src="./bower_components/jquery/dist/jquery.min.js"></script>
+<script src="./bower_components/moment/min/moment.min.js"></script>
+<!-- Bootstrap -->
+<script src="./bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<link href="./bower_components/bootstrap/dist/css/bootstrap.min.css"
+  rel="stylesheet">
+<!-- Custom fonts for this template -->
+<link href="./vendor/fontawesome-free/css/all.min.css" rel="stylesheet"
+  type="text/css">
+<link src="./index_files/css" rel="stylesheet" type="text/css">
+<link src="./index_files/css(1)" rel="stylesheet" type="text/css">
+<link src="./index_files/icon" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+  rel="stylesheet">
+<link href="./css/clean-blog.min.css" rel="stylesheet">
+<!-- Bootstrap material datetimepicker -->
+<script
+  src="./bower_components/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js"></script>
+<link
+  href="./bower_components/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css"
+  rel="stylesheet" type="text/css">
+<!-- index.css, index.js -->
+<link href="./css/index.css" rel="stylesheet" type="text/css">
+<script src="./js/index.js"></script>
+<!-- Country-Region DropDown Menu -->
+<script
+  src="./bower_components/country-region-dropdown-menu/assets/js/geodatasource-cr.min.js"></script>
+<link rel="stylesheet"
+  href="./bower_components/country-region-dropdown-menu/assets/css/geodatasource-countryflag.css">
+<script type="text/javascript"
+  src="./bower_components/country-region-dropdown-menu/assets/js/Gettext.js"></script>
+<link rel="gettext" type="application/x-po"
+  href="./bower_components/country-region-dropdown-menu/languages/ko/LC_MESSAGES/ko.po" />
+
+<!-- 주원이 정의한 스타일-->
+<style type="text/css">
+body {
+  height: 100%;
+}
+</style>
+</head>
+
+<body>
+  <!-- Main Content -->
+  <div class="container">
+    <img src="./img/user.png" alt="My Image"> <input type="text"
+      class="form-control" placeholder="ID" id="Id" required=""
+      data-validation-required-message="Please enter your ID.">
+    <textarea class="form-control" placeholder="content" rows="10"></textarea>
+    <img src="./img/user.png" alt="My Image" width="100" height="100">
+    <label>User</label>
+    <textarea class="form-control" placeholder="content" rows="10"></textarea>
+
+    <form class="">
+      <label class="date-label" for="start-date">출발</label> <input
+        type="text" class="date-input form-control" id="start-date"
+        placeholder="출발"> <span class="date-colon">:</span> <label
+        class="date-label" for="start-date">도착</label> <input type="text"
+        class="date-input form-control" id="end-date" placeholder="도착">
+      <textarea class="form-control" placeholder="content" rows="10"></textarea>
+      <button type="submit" class="btn btn-primary" id="signIn">Search</button>
+    </form>
+  </div>
+
+
+  <!-- Bootstrap core JavaScript -->
+  <script>
+  // When the user clicks on div, open the popup
+  function myFunction() {
+    var popup = document.getElementById("myPopup");
+    popup.classList.toggle("show");
+  }
+  </script>
+</body>
+</html>

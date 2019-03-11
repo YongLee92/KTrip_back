@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<!--사이드 상품 등록 pageNo.9 -->
+<html lang="ko"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>KTrip: 나만을 위한 여행 가이드</title>
+  <!-- Bootstrap core CSS -->
+  <link href="./vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom fonts for this template -->
+  <link href="./vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="./index_files/css" rel="stylesheet" type="text/css">
+  <link href="./index_files/css(1)" rel="stylesheet" type="text/css">
+  <link href="./index_files/icon" rel="stylesheet">
+  <!-- Custom styles for this template -->
+  <link href="./index_files/icon" rel="stylesheet">
+  <!--<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">-->
+  <link href="./css/clean-blog.min.css" rel="stylesheet">
+</head>
+<body>
+  <!--Main -->
+  <!--상당 메뉴 -->
+
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <!-- Contact Form -->
+        <h5>신청자 목록</h5>
+        <table class="table table-sm  table-responsive{-sm|-md|-lg|-xl} text-center">
+          <thead class="thead-light">
+            <tr >
+              <th >신청자</th>
+              <th>기간</th>
+              <th>승낙</th>
+              <th>거절</th>
+            </tr>
+          </thead>
+          </tbody>
+            <tr>
+              <td>길라임</td>
+              <td>3박4일</td>
+              <td><button class="btn-primary btn-sm" id="btn_accept">승낙</button></td>
+              <td><button class="btn-primary btn-sm" id="btn_decline">거절</button></td>
+            </tr>
+            <tr>
+              <td>홍길동</td>
+              <td>3박4일</td>
+              <td><button class="btn-primary btn-sm" id="btn_accept">승낙</button></td>
+              <td><button class="btn-primary btn-sm" id="btn_decline">거절</button></td>
+            </tr>
+            <tr>
+              <td>김주원</td>
+              <td>3박4일</td>
+              <td><button class="btn-primary btn-sm" id="btn_accept">승낙</button></td>
+              <td><button class="btn-primary btn-sm" id="btn_decline">거절</button></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h5>여행 가이드 정보</h5>
+        <form name="form_item_reg" id="" novalidate="">
+
+          <div class="control-group">
+            <h5 class=text-info>상품명</h5>
+            <input type="text" class="form-control" placeholder="상품명" id="title" required
+              data-validation-required-message="상품명을 입력해주세요." disabled>
+            <p class="help-block text-danger"></p>
+          </div>
+  
+          <div class="control-group">
+            <h5 class=text-info>최소인원</h5>
+            <input type="text" class="form-control" placeholder="최소인원" id="num_min" required
+              data-validation-required-message="최소인원을 입력해주세요." disabled>
+            <p class="help-block text-danger"></p>
+          </div>
+
+          <div class="control-group">
+              <h5 class=text-info>최대인원</h5>
+              <input type="text" class="form-control" placeholder="최대인원" id="num_max" required
+                data-validation-required-message="최대인원을 입력해주세요." disabled>
+              <p class="help-block text-danger"></p>
+            </div>
+
+          <div class="control-group">
+            <h5 class=text-info>기간</h5>
+            <input type="text" class="form-control" placeholder="기간" id="duration" required
+              data-validation-required-message="기간을 입력해주세요." disabled>
+            <p class="help-block text-danger"></p>
+          </div>
+
+          <div class="control-group">
+            <h5 class=text-info>가격(1인당)</h5>
+            <input type="text" class="form-control" placeholder="가격(1인당)" id="item_price" required
+              data-validation-required-message="가격(1인당)을 입력해주세요." disabled>
+            <p class="help-block text-danger"></p>
+          </div>
+
+          <div class="control-group">
+            <h5 class=text-info>상품 소개</h5>
+            <textarea rows="5" class="form-control" placeholder="상품 소개" id="contents" required
+              data-validation-required-message="상품 소개를 입력해주세요." disabled></textarea>
+            <p class="help-block text-danger"></p>
+          </div>
+  
+          <div id="success"></div>
+          <div class="form-group">
+            <button class="btn btn-primary" id="btn_cls" onclick="self.close()">취소</button>
+            <button type="submit" class="btn btn-primary" id="btn_edit">수정</button>
+          </div>
+        </form>
+  
+  
+  
+      </div>
+      <!--basic containge form-->
+    </div>
+  </div>
+
+
+
+  <!-- Bootstrap core JavaScript -->
+<script>
+// When the user clicks on div, open the popup
+//<!--popup jsp-->
+function myFunction() {
+  var popup = document.getElementById("myPopup");
+  popup.classList.toggle("show");
+}
+</script>
+  <script src="./vendor/jquery/jquery.min.js"></script>
+  <script src="./vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="./js/clean-blog.min.js"></script>
+
+</body>
+</html>

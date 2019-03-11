@@ -1,0 +1,18 @@
+#notice-header-img {
+    background-image: url('../img/notice-bg.jpg');
+}
+
+.notice-modal {
+    background-image: url('../img/notice-bg.jpg') !important ;
+}
+
+.next-img {
+    width: 30%;
+}
+
+#notice-heading{
+    padding: 80px 0;
+}
+
+#notice_title.title{display:block; font-size:15px; margin-left:30px;}
+#notice_content.content{display:block; min-height:300px; font-size:15px; margin:30px}

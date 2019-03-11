@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport"
+  content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="">
+<title>KTrip: 나만을 위한 여행 가이드</title>
+
+<!-- jQuery and moment.js and rome.js-->
+<script src="./bower_components/jquery/dist/jquery.min.js"></script>
+<script src="./bower_components/moment/min/moment.min.js"></script>
+<!-- Bootstrap -->
+<script src="./bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<link href="./bower_components/bootstrap/dist/css/bootstrap.min.css"
+  rel="stylesheet">
+<!-- Custom fonts for this template -->
+<link href="./vendor/fontawesome-free/css/all.min.css" rel="stylesheet"
+  type="text/css">
+<link src="./index_files/css" rel="stylesheet" type="text/css">
+<link src="./index_files/css(1)" rel="stylesheet" type="text/css">
+<link src="./index_files/icon" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+  rel="stylesheet">
+<link href="./css/clean-blog.min.css" rel="stylesheet">
+
+
+
+<!-- Bootstrap material datetimepicker -->
+<script
+  src="./bower_components/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js"></script>
+<link
+  href="./bower_components/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css"
+  rel="stylesheet" type="text/css">
+<!-- index.css, index.js -->
+<link href="./css/index.css" rel="stylesheet" type="text/css">
+<script src="./js/index.js"></script>
+
+<!-- 주원이 정의한 스타일-->
+<style type="text/css">
+.trip_list_header {
+  text-align: center;
+}
+
+.insert_product {
+  text-align: center;
+}
+</style>
+
+<!-- 접속 시 대기중인 상품과 다녀온 상품을 불러들이기 위한 스크립트문-->
+<script>
+    var popupX = (window.screen.width/2) - (600/2);
+    var popupY = (window.screen.height/2) - (900/ 2);
+  
+    $( document ).ready(function() {
+      CallProduct();
+     window.open('Review.jsp', '', 'status=no, height=900, width=600, left='+ popupX + ', top='+ popupY + ', screenX='+ popupX + ', screenY= '+ popupY);
+    });
+    var request = new XMLHttpRequest();
+  
+    function openPopup(){
+      window.open('ApplyProduct.jsp', 'popup01', 'width=600, height=900, scrollbars= 0, toolbar=0, menubar=no');
+    }
+    
+    function CallProduct()
+    {
+      request.open("Post", "./SearchProductServlet?userID=song", true);
+      request.onreadystatechange = DisplayProduct;
+      request.send(null);
+    }
+
+    function DisplayProduct(){
+      if(request.readyState == 4 && request.status == 200)
+      {
+        var object = eval('(' + request.responseText + ')');
+        var result = object.result;
+    var product2='';
+      product2+='<table id="datatable" class="table table-striped dt-responsive nowrap"><tbody>';
+    
+    for(var i = 0; i<result.length; ++i)
+        {
+          if(i == 0){
+            product2+='<tr>';
+          }
+          
+          if((i != 0) && (i%3 == 0)){
+            product2+='</tr>';
+            product2+='<tr>';
+          }
+          
+          product2+='<td><img src="one.jpg" alt="My Image" width="100" height="100" onclick="openPopup();"></td>';
+          
+          if(i == result.length -1){
+            product2+='</tr>';
+          }
+          
+          for(var j = 0;j<result[i].length; ++j)
+            {
+            
+            }
+        }
+        
+        product2+='</tbody></table>';
+        $('.insert_product').html(product2)
+      }
+    }
+  </script>
+</head>
+
+<body>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top"
+    id="mainNav">
+    <div class="container">
+      <a class="navbar-brand" href="./index.html"><img
+        src="./img/logo.png" width="80" height="30" alt="KTrip"></a>
+      <button class="navbar-toggler navbar-toggler-right" type="button"
+        data-toggle="collapse" data-target="#navbarResponsive"
+        aria-controls="navbarResponsive" aria-expanded="true"
+        aria-label="Toggle navigation">
+        Menu <i class="fas fa-bars"></i>
+      </button>
+      <div class="navbar-collapse collapse show" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item"><a class="nav-link" href="./index.html">service</a>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="./guide.html">guide</a>
+          </li>
+          <li class="nav-item"><a class="nav-link"
+            href="./tourlist.html">tourlist</a></li>
+          <li class="nav-item"><a class="nav-link" href="./contact.html">contact</a>
+          </li>
+          <li class="nav-item"><div class="popup" onclick="myFunction()">
+              <img src="./img/user.png" width="50" height="35" alt="User">
+              <span class="popuptext" id="myPopup">A Simple Popup!</span>
+            </div></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="masthead"
+    style="background-image: url(&#39;img/home3-bg.jpg&#39;)">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="site-heading">
+            <img src="./img/logo.png" width="320" height="120" alt="KTrip">
+            <span class="subheading"></span>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <div class="container">
+    <div class="form-group">
+      <h3 class="trip_list_header">가이드 검색</h3>
+      <form action="./SearchTripServlet" accept-charset="utf-8" name="info"
+        method="post">
+        <label class="date-label">목적지</label> <input type="text"
+          class="date-input form-control" id="destination" placeholder="목적지">
+        <label class="date-label" for="start-date">출발</label> <input
+          type="text" class="date-input form-control" id="start-date"
+          placeholder="출발"> <span class="date-colon">:</span> <label
+          class="date-label" for="start-date">도착</label> <input type="text"
+          class="date-input form-control" id="end-date" placeholder="도착">
+        <button type="submit" class="btn btn-primary" id="signIn">Search</button>
+      </form>
+      <br>
+      <h3 class="trip_list_header">상품 리스트</h3>
+      <br>
+      <div class="insert_product2" id="product_list"></div>
+      <br>
+    </div>
+
+    <div class="form-group">
+      <h3 class="trip_list_header">내 여행 리스트</h3>
+      <br>
+      <h5 class=text-info>대기중인 여행</h5>
+      <br>
+      <div class="insert_product" id="my_product_list"></div>
+      <br>
+      <h5 class=text-info>다녀온 여행</h5>
+      <div class="insert_product" id="my_product_list2"></div>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <ul class="list-inline text-center">
+
+            <li class="list-inline-item"><a href="./index.html#"> <span
+                class="fa-stack fa-lg"> <i
+                  class="fas fa-circle fa-stack-2x"></i> <i
+                  class="fab fa-chrome fa-stack-1x fa-inverse"></i>
+              </span>
+            </a></li>
+            <li class="list-inline-item"><a
+              href="https://github.com/WonHyeongCho/ktcp-fresh-ktds#"> <span
+                class="fa-stack fa-lg"> <i
+                  class="fas fa-circle fa-stack-2x"></i> <i
+                  class="fab fa-github fa-stack-1x fa-inverse"></i>
+              </span>
+            </a></li>
+            <li class="list-inline-item"><a href="./index.html#"> <span
+                class="fa-stack fa-lg"> <i
+                  class="fas fa-circle fa-stack-2x"></i> <i
+                  class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+              </span>
+            </a></li>
+          </ul>
+
+          <p class="copyright text-muted">
+            주소: 서울특별시 서초구 방배동 1001-1 대표 전화 : 02-523-7029 <br> <a
+              href="./index.html#">KTrip</a> Copyright © <a
+              href="https://www.ktds.com/index.jsp">KTds</a> All Rights
+            Reserved.
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script>
+
+    // When the user clicks on div, open the popup
+    function myFunction() {
+      var popup = document.getElementById("myPopup");
+      popup.classList.toggle("show");
+    }
+    </script>
+</body>
+</html>
