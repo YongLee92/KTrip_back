@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>KTrip: 나만을 위한 여행 가이드</title>
+
+  <!-- jQuery and moment.js and rome.js-->
+  <script src="./bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="./bower_components/moment/min/moment.min.js"></script>
+  <!-- Bootstrap -->
+  <script src="./bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+  <link href="./bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom fonts for this template -->
+  <link href="./vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link src="./index_files/css" rel="stylesheet" type="text/css">
+  <link src="./index_files/css(1)" rel="stylesheet" type="text/css">
+  <link src="./index_files/icon" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="./css/clean-blog.min.css" rel="stylesheet">
+  <!-- Bootstrap material datetimepicker -->
+  <script src="./bower_components/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js"></script>
+  <link href="./bower_components/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css" rel="stylesheet" type="text/css">
+  <!-- index.css, index.js -->
+  <link href="./css/index.css" rel="stylesheet" type="text/css">
+  <script src="./js/index.js"></script>
+  <!-- Country-Region DropDown Menu -->
+  <script src="./bower_components/country-region-dropdown-menu/assets/js/geodatasource-cr.min.js"></script>
+  <link rel="stylesheet" href="./bower_components/country-region-dropdown-menu/assets/css/geodatasource-countryflag.css">
+  <script type="text/javascript" src="./bower_components/country-region-dropdown-menu/assets/js/Gettext.js"></script>
+  <link rel="gettext" type="application/x-po" href="./bower_components/country-region-dropdown-menu/languages/ko/LC_MESSAGES/ko.po"/>
+</head>
+
+<body>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand" href="./index.html"><img src="./img/logo.png" width="80" height="30" alt="KTrip"></a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="true" aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="navbar-collapse collapse show" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="./index.html">service</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./guide.html">guide</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./tourlist.html">tourlist</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./contact.html">contact</a>
+          </li>
+         <li class="nav-item"><div class="popup" onclick="myFunction()">
+           <img src="./img/user.png" width="50" height="35" alt="User">
+           <span class="popuptext" id="myPopup">A Simple Popup!</span></div>
+         </li>
+       </ul>
+     </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url(&#39;img/home3-bg.jpg&#39;)">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="site-heading">
+            <img src="./img/logo.png" width="320" height="120" alt="KTrip">
+            <span class="subheading"></span>
+            <div class="form-group">
+              <label class="date-label" for="start-date">출발</label>
+              <input type="text" class="date-input form-control" id="start-date" placeholder="출발">
+              <span class="date-colon">:</span>
+              <label class="date-label" for="start-date">도착</label>
+              <input type="text" class="date-input form-control" id="end-date" placeholder="도착">
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-12 text-center" style="margin-bottom:40px;">
+          <h2>Country-Region DropDown Menu</h2>
+      </div>
+      <div class="col-md-12">
+          <form class="form-horizontal">
+              <div class="form-group">
+                  <label class="col-sm-2 control-label">Country</label>
+                  <div class="col-sm-10">
+                      <select class="form-control gds-cr gds-countryflag" country-data-region-id="gds-cr-1" data-language="en"></select>
+                  </div>
+              </div>
+              <div class="form-group">
+                  <label for="gds-cr-1" class="col-sm-2 control-label">Region</label>
+                  <div class="col-sm-10">
+                      <select class="form-control" id="gds-cr-1"></select>
+                  </div>
+              </div>
+          </form>
+      </div>
+
+
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <div class="post-preview">
+          <a href="./post.html">
+            <h2 class="post-title">
+              Man must explore, and this is exploration at its greatest
+            </h2>
+            <h3 class="post-subtitle">
+              Problems look mighty small from 150 miles up
+            </h3>
+          </a>
+          <p class="post-meta">Posted by
+            <a href="./index.html#">Start Bootstrap</a>
+            on September 24, 2019</p>
+        </div>
+        <hr>
+        <div class="post-preview">
+          <a href="./post.html">
+            <h2 class="post-title">
+              I believe every human has a finite number of heartbeats. I don't intend to waste any of mine.
+            </h2>
+          </a>
+          <p class="post-meta">Posted by
+            <a href="./index.html#">Start Bootstrap</a>
+            on September 18, 2019</p>
+        </div>
+        <hr>
+        <div class="post-preview">
+          <a href="./post.html">
+            <h2 class="post-title">
+              Science has not yet mastered prophecy
+            </h2>
+            <h3 class="post-subtitle">
+              We predict too much for the next year and yet far too little for the next ten.
+            </h3>
+          </a>
+          <p class="post-meta">Posted by
+            <a href="./index.html#">Start Bootstrap</a>
+            on August 24, 2019</p>
+        </div>
+        <hr>
+        <div class="post-preview">
+          <a href="./post.html">
+            <h2 class="post-title">
+              Failure is not an option
+            </h2>
+            <h3 class="post-subtitle">
+              Many say exploration is part of our destiny, but it’s actually our duty to future generations.
+            </h3>
+          </a>
+          <p class="post-meta">Posted by
+            <a href="./index.html#">Start Bootstrap</a>
+            on July 8, 2019</p>
+        </div>
+        <hr>
+        <!-- Pager -->
+        <div class="clearfix">
+          <a class="btn btn-primary float-right" href="./index.html#">Older Posts →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <ul class="list-inline text-center">
+
+            <li class="list-inline-item">
+              <a href="./index.html#">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-chrome fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="https://github.com/WonHyeongCho/ktcp-fresh-ktds#">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+    		<li class="list-inline-item">
+              <a href="./index.html#">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          </ul>
+
+          <p class="copyright text-muted">주소: 서울특별시 서초구 방배동 1001-1 대표 전화 : 02-523-7029 <br>
+          <a href="./index.html#">KTrip</a>
+          Copyright © <a href="https://www.ktds.com/index.jsp">KTds</a> All Rights Reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script>
+  // When the user clicks on div, open the popup
+  function myFunction() {
+    var popup = document.getElementById("myPopup");
+    popup.classList.toggle("show");
+  }
+  </script>
+</body>
+</html>

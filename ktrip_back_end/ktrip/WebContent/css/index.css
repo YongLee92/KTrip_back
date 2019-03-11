@@ -1,0 +1,15 @@
+.date-input {
+    width: 20%;
+    display: inline-block;
+    text-align: center;
+}
+
+.date-colon {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.date-label {
+    margin-right: 10px;
+}
+

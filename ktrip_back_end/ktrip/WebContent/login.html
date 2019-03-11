@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>KTrip: 나만을 위한 여행 가이드</title>
+  <!-- Bootstrap core CSS -->
+  <link href="./vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom fonts for this template -->
+  <link href="./vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="./index_files/css" rel="stylesheet" type="text/css">
+  <link href="./index_files/css(1)" rel="stylesheet" type="text/css">
+  <link href="./index_files/icon" rel="stylesheet">
+  <!-- Custom styles for this template -->
+  <link href="./index_files/icon" rel="stylesheet">
+  <!--<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">-->
+  <link href="./css/clean-blog.min.css" rel="stylesheet">
+</head>
+
+<body>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand" href="./index.html"><img src="./img/logo.png" width="80" height="30" alt="KTrip"></a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="true" aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="navbar-collapse collapse show" id="navbarResponsive" style="">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="./index.html">service</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./guide.html">guide</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./tourlist.html">tourlist</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./contact.html">contact</a>
+          </li>
+         <li class="nav-item"><div class="popup" onclick="myFunction()">
+           <img src="./img/user.png" width="50" height="35" alt="User">
+           <span class="popuptext" id="myPopup">A Simple Popup!</span></div>
+         </li>
+       </ul>
+     </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url(&#39;img/home3-bg.jpg&#39;)">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="site-heading">
+            <img src="./img/logo.png" width="320" height="120" alt="KTrip">
+            <span class="subheading"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <!-- Contact Form - Enter your email address on line 19 of the mail/contact_me.php file to make this form work. -->
+        <!-- WARNING: Some web hosts do not allow emails to be sent through forms to common mail hosts like Gmail or Yahoo. It's recommended that you use a private domain email address! -->
+        <!-- To use the contact form, your site must be on a live web host with PHP! The form will not work locally! -->
+        <form name="sentMessage" id="contactForm" novalidate="" method="post">
+          <div class="control-group">
+              <h5 class=text-info>ID</h5>
+              <input type="text" class="form-control" placeholder="ID" id="Id" required="" data-validation-required-message="Please enter your ID.">
+              <p class="help-block text-danger"></p>
+          </div>
+
+          <div class="control-group">
+            <h5 class=text-info>PASSWORD</h5>
+              <input type="Password" class="form-control" placeholder="PASSWORD" id="Password" required="" data-validation-required-message="Please enter Password.">
+              <p class="help-block text-danger"></p>
+          </div>
+          <br>
+          <div id="success"></div>
+          <div class="form-group">
+            <button type="submit" class="btn btn-primary" id="signIn">Sign in</button>
+            <a class="btn btn-primary" href="./signup.html#">Sign up</a>
+          </div>
+          <div class="form-group">
+            <a class="btn btn-primary" href="./index.html#">바로가기→</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <ul class="list-inline text-center">
+            <li class="list-inline-item">
+              <a href="./index.html#">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-chrome fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="https://github.com/WonHyeongCho/ktcp-fresh-ktds#">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+    		<li class="list-inline-item">
+              <a href="./index.html#">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          </ul>
+
+          <p class="copyright text-muted">주소: 서울특별시 서초구 방배동 1001-1 대표 전화 : 02-523-7029 <br>
+          <a href="./index.html#">KTrip</a>
+          Copyright © <a href="https://www.ktds.com/index.jsp">KTds</a> All Rights Reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+<script>
+// When the user clicks on div, open the popup
+<!--popup jsp-->
+function myFunction() {
+  var popup = document.getElementById("myPopup");
+  popup.classList.toggle("show");
+}
+</script>
+  <script src="./vendor/jquery/jquery.min.js"></script>
+  <script src="./vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="./js/clean-blog.min.js"></script>
+
+</body>
+</html>
